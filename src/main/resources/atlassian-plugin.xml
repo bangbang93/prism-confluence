@@ -1,0 +1,213 @@
+<atlassian-plugin key="${atlassian.plugin.key}" name="${project.name}" plugins-version="2">
+    <plugin-info>
+        <description>${project.description}</description>
+        <version>${project.version}</version>
+        <vendor name="${project.organization.name}" url="${project.organization.url}" />
+        <param name="plugin-icon">images/pluginIcon.png</param>
+        <param name="plugin-logo">images/pluginLogo.png</param>
+    </plugin-info>
+
+    <!-- add our i18n resource -->
+    <resource type="i18n" name="i18n" location="PrismConfluence"/>
+    
+    <!-- add our web resources -->
+    <web-resource key="PrismConfluence-resources" name="PrismConfluence Web Resources">
+<!--        <dependency>com.atlassian.auiplugin:ajs</dependency>-->
+        
+        <resource type="download" name="PrismConfluence.css" location="/css/PrismConfluence.css"/>
+        <resource type="download" name="PrismConfluence.js" location="/js/PrismConfluence.js"/>
+        <resource type="download" name="images/" location="/images"/>
+
+        <resource type="download" name="js/prism.js" location="/js/prism.js"/>
+<!--        <resource type="download" name="js/prism-init.js" location="js/prism-init.js"/>-->
+        <resource type="download" name="css/prism.css" location="/css/prism.css"/>
+
+        <context>PrismConfluence</context>
+    </web-resource>
+
+    <xhtml-macro name="Prism.js" class="com.bangbang93.prismconfluence.Prism" key="prismjs">
+        <description key="prismconfluence.description"/>
+        <category name="formatting"/>
+        <parameters>
+            <parameter name="language" type="enum">
+                <value name="markup"/>
+                <value name="css"/>
+                <value name="clike"/>
+                <value name="javascript"/>
+                <value name="abap"/>
+                <value name="abnf"/>
+                <value name="actionscript"/>
+                <value name="ada"/>
+                <value name="apacheconf"/>
+                <value name="apl"/>
+                <value name="applescript"/>
+                <value name="arduino"/>
+                <value name="arff"/>
+                <value name="asciidoc"/>
+                <value name="asm6502"/>
+                <value name="aspnet"/>
+                <value name="autohotkey"/>
+                <value name="autoit"/>
+                <value name="bash"/>
+                <value name="basic"/>
+                <value name="batch"/>
+                <value name="bison"/>
+                <value name="bnf"/>
+                <value name="brainfuck"/>
+                <value name="bro"/>
+                <value name="c"/>
+                <value name="csharp"/>
+                <value name="cpp"/>
+                <value name="cil"/>
+                <value name="coffeescript"/>
+                <value name="cmake"/>
+                <value name="clojure"/>
+                <value name="crystal"/>
+                <value name="csp"/>
+                <value name="css-extras"/>
+                <value name="d"/>
+                <value name="dart"/>
+                <value name="diff"/>
+                <value name="django"/>
+                <value name="docker"/>
+                <value name="ebnf"/>
+                <value name="eiffel"/>
+                <value name="ejs"/>
+                <value name="elixir"/>
+                <value name="elm"/>
+                <value name="erb"/>
+                <value name="erlang"/>
+                <value name="fsharp"/>
+                <value name="flow"/>
+                <value name="fortran"/>
+                <value name="gcode"/>
+                <value name="gedcom"/>
+                <value name="gherkin"/>
+                <value name="git"/>
+                <value name="glsl"/>
+                <value name="gml"/>
+                <value name="go"/>
+                <value name="graphql"/>
+                <value name="groovy"/>
+                <value name="haml"/>
+                <value name="handlebars"/>
+                <value name="haskell"/>
+                <value name="haxe"/>
+                <value name="hcl"/>
+                <value name="http"/>
+                <value name="hpkp"/>
+                <value name="hsts"/>
+                <value name="ichigojam"/>
+                <value name="icon"/>
+                <value name="inform7"/>
+                <value name="ini"/>
+                <value name="io"/>
+                <value name="j"/>
+                <value name="java"/>
+                <value name="javadoc"/>
+                <value name="javadoclike"/>
+                <value name="javastacktrace"/>
+                <value name="jolie"/>
+                <value name="jsdoc"/>
+                <value name="js-extras"/>
+                <value name="json"/>
+                <value name="jsonp"/>
+                <value name="json5"/>
+                <value name="julia"/>
+                <value name="keyman"/>
+                <value name="kotlin"/>
+                <value name="latex"/>
+                <value name="less"/>
+                <value name="liquid"/>
+                <value name="lisp"/>
+                <value name="livescript"/>
+                <value name="lolcode"/>
+                <value name="lua"/>
+                <value name="makefile"/>
+                <value name="markdown"/>
+                <value name="markup-templating"/>
+                <value name="matlab"/>
+                <value name="mel"/>
+                <value name="mizar"/>
+                <value name="monkey"/>
+                <value name="n1ql"/>
+                <value name="n4js"/>
+                <value name="nand2tetris-hdl"/>
+                <value name="nasm"/>
+                <value name="nginx"/>
+                <value name="nim"/>
+                <value name="nix"/>
+                <value name="nsis"/>
+                <value name="objectivec"/>
+                <value name="ocaml"/>
+                <value name="opencl"/>
+                <value name="oz"/>
+                <value name="parigp"/>
+                <value name="parser"/>
+                <value name="pascal"/>
+                <value name="perl"/>
+                <value name="php"/>
+                <value name="phpdoc"/>
+                <value name="php-extras"/>
+                <value name="plsql"/>
+                <value name="powershell"/>
+                <value name="processing"/>
+                <value name="prolog"/>
+                <value name="properties"/>
+                <value name="protobuf"/>
+                <value name="pug"/>
+                <value name="puppet"/>
+                <value name="pure"/>
+                <value name="python"/>
+                <value name="q"/>
+                <value name="qore"/>
+                <value name="r"/>
+                <value name="jsx"/>
+                <value name="tsx"/>
+                <value name="renpy"/>
+                <value name="reason"/>
+                <value name="regex"/>
+                <value name="rest"/>
+                <value name="rip"/>
+                <value name="roboconf"/>
+                <value name="ruby"/>
+                <value name="rust"/>
+                <value name="sas"/>
+                <value name="sass"/>
+                <value name="scss"/>
+                <value name="scala"/>
+                <value name="scheme"/>
+                <value name="smalltalk"/>
+                <value name="smarty"/>
+                <value name="sql"/>
+                <value name="soy"/>
+                <value name="stylus"/>
+                <value name="swift"/>
+                <value name="tap"/>
+                <value name="tcl"/>
+                <value name="textile"/>
+                <value name="toml"/>
+                <value name="tt2"/>
+                <value name="twig"/>
+                <value name="typescript"/>
+                <value name="t4-cs"/>
+                <value name="t4-vb"/>
+                <value name="t4-templating"/>
+                <value name="vala"/>
+                <value name="vbnet"/>
+                <value name="velocity"/>
+                <value name="verilog"/>
+                <value name="vhdl"/>
+                <value name="vim"/>
+                <value name="visual-basic"/>
+                <value name="wasm"/>
+                <value name="wiki"/>
+                <value name="xeora"/>
+                <value name="xojo"/>
+                <value name="xquery"/>
+                <value name="yaml"/>
+            </parameter>
+        </parameters>
+    </xhtml-macro>
+    
+</atlassian-plugin>
