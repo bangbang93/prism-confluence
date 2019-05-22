@@ -23,11 +23,17 @@ public class Prism implements Macro {
     @Override
     public String execute(Map<String, String> map, String s, ConversionContext conversionContext) throws MacroExecutionException {
         pageBuilderService.assembler().resources().requireWebResource("com.bangbang93.PrismConfluence:PrismConfluence-resources");
-        String language = "javascript";
+        String language = "typescript";
         if (map.get("language") != null) {
             language = map.get("language");
         }
-        return "<pre><code class=\"language-" + language + "\"> " + s + "</code></pre>";
+        String lineNumbers = " line-numbers";
+        if ("false".equals(map.get("line-numbers"))) {
+            lineNumbers = "";
+        }
+        return "<pre><code class=\"language-" + language + lineNumbers + "\">"
+                + s +
+                "</code></pre>";
     }
 
     @Override
