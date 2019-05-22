@@ -13,11 +13,11 @@
     <!-- add our web resources -->
     <web-resource key="PrismConfluence-resources" name="PrismConfluence Web Resources">
 
-        <resource type="download" name="clipboard.js" location="/js/clipboard.min.js"/>
         <resource type="download" name="PrismConfluence.css" location="/css/PrismConfluence.css"/>
         <resource type="download" name="PrismConfluence.js" location="/js/PrismConfluence.js"/>
         <resource type="download" name="images/" location="/images"/>
 
+        <resource type="download" name="clipboard.js" location="/js/clipboard.min.js"/>
         <resource type="download" name="js/prism.js" location="/js/prism.js"/>
         <resource type="download" name="css/prism.css" location="/css/prism.css"/>
 
