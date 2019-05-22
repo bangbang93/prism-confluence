@@ -6,6 +6,7 @@ import com.atlassian.confluence.macro.MacroExecutionException;
 import com.atlassian.plugin.spring.scanner.annotation.component.Scanned;
 import com.atlassian.plugin.spring.scanner.annotation.imports.ComponentImport;
 import com.atlassian.webresource.api.assembler.PageBuilderService;
+import org.apache.commons.lang.StringEscapeUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Map;
@@ -31,7 +32,7 @@ public class Prism implements Macro {
         if ("false".equals(map.get("line-numbers"))) {
             lineNumbers = "";
         }
-        return String.format("<script type=\"text/plain\" class=\"language-%s%s\">%s</script>", language, lineNumbers, s);
+        return String.format("<pre><code class=\"language-%s%s\">%s</code></pre>", language, lineNumbers, StringEscapeUtils.escapeHtml(s));
     }
 
     @Override
