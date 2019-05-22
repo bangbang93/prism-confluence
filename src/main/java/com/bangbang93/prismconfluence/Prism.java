@@ -31,9 +31,7 @@ public class Prism implements Macro {
         if ("false".equals(map.get("line-numbers"))) {
             lineNumbers = "";
         }
-        return "<pre><code class=\"language-" + language + lineNumbers + "\">"
-                + s +
-                "</code></pre>";
+        return String.format("<script type=\"text/plain\" class=\"language-%s%s\">%s</script>", language, lineNumbers, s);
     }
 
     @Override
